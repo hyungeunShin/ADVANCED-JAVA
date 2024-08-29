@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 public class YieldMain {
     /*
     yield
-        자바의 스레드가 RUNNABLE 상태일 때, 운영체제의 스케줄링은 다음과 같은 상태들을 가질 수 있다.
+        자바의 스레드가 RUNNABLE 상태일 때 운영체제의 스케줄링은 다음과 같은 상태들을 가질 수 있다.
             - 실행 상태(Running): 스레드가 CPU 에서 실제로 실행 중이다.
             - 실행 대기 상태(Ready): 스레드가 실행될 준비가 되었지만 CPU 가 바빠서 스케줄링 큐에서 대기 중이다.
         운영체제는 실행 상태의 스레드들을 잠깐만 실행하고 실행 대기 상태로 만든다.
@@ -54,7 +54,7 @@ public class YieldMain {
             IntStream.range(0, 10).forEach(i -> {
                 System.out.println(Thread.currentThread().getName() + " - " + i);
                 ThreadUtils.sleep(1);
-                //Thread.yield();
+                Thread.yield();
             });
         }
     }
